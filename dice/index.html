@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dice</title>
+    <style>
+      .spin {
+        animation: spin 2s linear;
+      }
+
+      img {
+        max-width: 12rem;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 9rem;
+      }
+
+      button {
+        margin-top: 5rem;
+        border: none;
+        background-color: rgb(104, 104, 255);
+        padding: 1rem;
+        border-radius: 1rem;
+        color: white;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(1000deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img src="dice.png" class="dice" alt="" />
+    <button onclick="btnClick()">Spin</button>
+    <h1 class="number">1</h1>
+    <!-- BULB THING -->
+    <img src="on.png" class="bulb" />
+    <button class="bulbBtn" onclick="bulbFunc()">Off</button>
+    <script src="app.js"></script>
+  </body>
+</html>
