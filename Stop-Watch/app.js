@@ -14,17 +14,20 @@ function updateDisplay() {
 }
 
 function startStopwatch() {
-  if (interval) return;
-  interval = setInterval(() => {
-    seconds += 1;
-    if (seconds >= 60) {
+  clearInterval(interval);
+  interval = setInterval(function () {
+    seconds = seconds + 1;
+
+    if (seconds === 60) {
       seconds = 0;
-      minutes += 1;
-      if (minutes >= 60) {
-        minutes = 0;
-        hours += 1;
-      }
+      minutes = minutes + 1;
     }
+
+    if (minutes === 60) {
+      minutes = 0;
+      hours = hours + 1;
+    }
+
     updateDisplay();
   }, 1000);
 }
